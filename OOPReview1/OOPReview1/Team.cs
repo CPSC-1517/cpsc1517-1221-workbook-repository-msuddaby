@@ -22,54 +22,28 @@ namespace OOPReview1
 
     public class Team
     {
-        private Conference Conference;
-        private Division Division;
-        private string Name;
+        private Conference _conference;
+        private Division _division;
+        private string _name;
 
         public Team(Conference conference, Division division, string name)
         {
-            Conference = conference;
-            Division = division;
-            Name = name;
+            _conference = conference;
+            _division = division;
+            _name = name;
         }
 
-        public void SetConference(Conference conference)
+        public Conference Conference
         {
-            Conference = conference;
-
+            get { return _conference; }
         }
-
-        public Conference GetConference()
+        public Division Division
         {
-            return Conference;
+            get { return _division; }
+            set { _division = value; }
         }
 
-        public void SetDivision(Division division)
-        {
-            Division = division;
-        }
 
-        public Division GetDivision()
-        {
-            return Division;
-        }
-
-        public void SetName(string name)
-        {
-            if (!string.IsNullOrEmpty(name))
-            {
-                Name = name;
-            }
-            else
-            {
-                throw new Exception("You must enter a name for the team!");
-            }
-        }
-
-        public string GetName()
-        {
-            return Name;
-        }
 
     }
 }
