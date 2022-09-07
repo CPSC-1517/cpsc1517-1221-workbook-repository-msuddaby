@@ -18,7 +18,6 @@ namespace OOPReview1
         private int _wins;
         private int _losses;
         private int _overtimeLosses;
-        private int _points;
 
         private List<NHLPlayer> _players;
         public NHLTeam(NHLConference conference, NHLDivision division, string name, string city)
@@ -134,11 +133,7 @@ namespace OOPReview1
         {
             get
             {
-                _points = 0;
-                _points += _wins * 2;
-                _points += _overtimeLosses;
-
-                return _points; 
+                return (Wins * 2) + OvertimeLosses;
             }
         }
 
