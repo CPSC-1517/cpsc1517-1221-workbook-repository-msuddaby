@@ -29,6 +29,10 @@
                 $"\tOvertime Losses - {newTeam2.OvertimeLosses}" +
                 $"\tPOINTS - {newTeam2.Points}");
 
+            NHLPlayer Jeff = new NHLPlayer(12, "Jeff", PlayerPosition.CENTER);
+            Console.WriteLine(Jeff.ToString());
+
+
         }
     }
 }

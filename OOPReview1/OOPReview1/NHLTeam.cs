@@ -19,13 +19,24 @@ namespace OOPReview1
         private int _losses;
         private int _overtimeLosses;
 
-        private List<NHLPlayer> _players;
+        private const int MaxPlayers = 23;
+
+        public NHLTeam(NHLConference conference, NHLDivision division, string name, string city, List<NHLPlayer> players) 
+        {
+            Name = name;
+            City = city;
+            _conference = conference;
+            _division = division;
+            Players = players;
+        }
+
         public NHLTeam(NHLConference conference, NHLDivision division, string name, string city)
         {
             _conference = conference;
             _division = division;
             _name = name;
             _city = city;
+            Players = new List<NHLPlayer>();
         }
 
         public NHLConference Conference
@@ -139,12 +150,29 @@ namespace OOPReview1
 
         public List<NHLPlayer> Players
         {
-            get { return _players; }
+            get; private set;
         }
 
         public void AddPlayer(NHLPlayer player)
         {
-            _players.Add(player);
+
+            if (Players.Count >= MaxPlayers)
+            {
+                throw new ArgumentException("The team is full!");
+            }
+            Players.Add(player);
+        }
+
+        public void RemovePlayer(int playerNo)
+        {
+            var playerSearch = Players.Where(x => x.PlayerNumber == playerNo).FirstOrDefault();
+            if (playerSearch != null)
+            {
+                Players.Remove(playerSearch);
+            } else
+            {
+                throw new ArgumentException("The specified player number could not be found in the team.");
+            }
         }
 
     }
