@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhlSystem", "NhlSystem\NhlSystem.csproj", "{042C2539-72C6-4AA3-AF3B-AF511A707749}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhlSystemTest", "NhlSystemTest\NhlSystemTest.csproj", "{434B897D-5D62-40E6-8A6F-EA78668402B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{042C2539-72C6-4AA3-AF3B-AF511A707749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{042C2539-72C6-4AA3-AF3B-AF511A707749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{042C2539-72C6-4AA3-AF3B-AF511A707749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{042C2539-72C6-4AA3-AF3B-AF511A707749}.Release|Any CPU.Build.0 = Release|Any CPU
+		{434B897D-5D62-40E6-8A6F-EA78668402B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{434B897D-5D62-40E6-8A6F-EA78668402B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{434B897D-5D62-40E6-8A6F-EA78668402B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{434B897D-5D62-40E6-8A6F-EA78668402B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7B73375-DE2C-4A1C-B0C0-02116F5AA61A}
+	EndGlobalSection
+EndGlobal
