@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WestWindSystem.DAL
 {
-    internal class WestWindContext
+    public class WestWindContext: DbContext
     {
 
 
