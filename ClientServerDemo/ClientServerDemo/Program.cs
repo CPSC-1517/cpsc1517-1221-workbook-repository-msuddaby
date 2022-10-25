@@ -1,13 +1,24 @@
+using Microsoft.EntityFrameworkCore;
+using WestWindSystem.DAL;
+
 namespace ClientServerDemo
 {
     public class Program
     {
+
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            
+
             // Add services to the container.
             builder.Services.AddRazorPages();
+
+            builder.Services.AddDbContext<WestWindContext>(options => options.UseSqlServer(
+                    
+                ));
+
 
             var app = builder.Build();
 
@@ -22,6 +33,7 @@ namespace ClientServerDemo
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            
             app.UseRouting();
 
             app.UseAuthorization();
