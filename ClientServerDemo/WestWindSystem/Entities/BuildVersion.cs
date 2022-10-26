@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace WestWindSystem.Entities
 {
+    [Table(name:"BuildVersion")]
     public class BuildVersion
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

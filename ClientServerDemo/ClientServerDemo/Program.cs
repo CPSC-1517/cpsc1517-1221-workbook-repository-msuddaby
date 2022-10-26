@@ -9,8 +9,9 @@ namespace ClientServerDemo
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var dbConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-            
+
 
             // Add services to the container.
             builder.Services.AddRazorPages();
