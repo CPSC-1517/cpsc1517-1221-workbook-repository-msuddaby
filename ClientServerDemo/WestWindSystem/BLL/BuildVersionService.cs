@@ -1,9 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WestWindSystem.DAL;
 using WestWindSystem.Entities;
 
@@ -18,9 +13,9 @@ namespace WestWindSystem.BLL
             _context = context;
         }
 
-        public async Task<BuildVersion> GetLatestVersion()
+        public BuildVersion GetLatestVersion()
         {
-            return await _context.BuildVersions.FirstOrDefaultAsync();
+            return _context.BuildVersions.FirstOrDefault();
         }
     }
 }

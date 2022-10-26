@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using WestWindSystem.BLL;
 using WestWindSystem.DAL;
 
 namespace ClientServerDemo
@@ -10,17 +11,13 @@ namespace ClientServerDemo
         {
             var builder = WebApplication.CreateBuilder(args);
             var dbConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddBackendDependencies(options => options.UseSqlServer(dbConnectionString));
+
 
 
 
             // Add services to the container.
             builder.Services.AddRazorPages();
-
-            builder.Services.AddDbContext<WestWindContext>(options => options.UseSqlServer(
-                    
-                ));
-
-
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

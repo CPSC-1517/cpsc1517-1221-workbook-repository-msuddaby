@@ -1,0 +1,30 @@
+﻿@page
+@model WestWindWebApp.Pages.Categories.IndexModel
+@{
+}
+
+@if (Model.Categories.Count > 0)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>CategoryName</th>
+                <th>Description</th>
+                <th>Picture</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var currentCategory in Model.Categories)
+            {
+                <tr>
+                    <td>@currentCategory.Id</td>
+                    <td>@currentCategory.CategoryName</td>
+                    <td>@currentCategory.Description</td>
+                    <td><img src="data:@(currentCategory.PictureMimeType.Replace("\\","/"));base64,@Convert.ToBase64String(currentCategory.Picture)" alt="image" /></td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+}

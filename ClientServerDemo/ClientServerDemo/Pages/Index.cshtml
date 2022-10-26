@@ -4,6 +4,27 @@
     ViewData["Title"] = "Home page";
 }
 
+@if (Model.CurrentBuildVersion == null)
+{
+    <div class="alert alert-warning" role="alert">
+        Build Version Unknown
+    </div>
+}
+else
+{
+    <div class="alert alert-info" role="alert">
+        Database Version: @Model.CurrentBuildVersion.Major . @Model.CurrentBuildVersion.Minor . @Model.CurrentBuildVersion.Build
+        &nbsp;
+        released on @Model.CurrentBuildVersion.ReleaseDate.ToString("MMM dd, yyyy")
+    </div>
+}
+
+@foreach (var category in Model.CategoryList) {
+    <h2>@category.CategoryName</h2>
+    <p>@category.Description</p>
+    <img src="data:@(category.PictureMimeType.Replace("\\","/"));base64,@Convert.ToBase64String(category.Picture)" type="@category.PictureMimeType" />
+}
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
