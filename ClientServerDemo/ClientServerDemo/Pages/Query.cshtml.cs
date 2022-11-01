@@ -14,7 +14,7 @@ namespace WestWindWebApp.Pages
             _categoryServices = categoryServices;
         }
 
-        public List<Category> CategoryList { get; set; }
+        public List<Category> CategoryList { get; private set; }
 
         [BindProperty]
         public Category CategorySelection { get; set; }
