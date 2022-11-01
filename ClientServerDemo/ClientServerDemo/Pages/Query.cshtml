@@ -1,0 +1,18 @@
+﻿@page
+@model WestWindWebApp.Pages.QueryModel
+@{
+}
+
+<form method="POST">
+    <div class="mb-3">
+        <label class="form-label">Rail Car Type</label>
+        <select asp-for="CategorySelection" class="form-select">
+            <option selected>Select something</option>
+            @foreach (var type in Model.CategoryList) {
+                <option value="@type.Id">@type.CategoryName</option>
+            }
+        </select>
+    </div>
+
+
+</form>
